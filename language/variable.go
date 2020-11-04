@@ -76,5 +76,46 @@ func main() {
 	fmt.Printf("var b string \t %T [%v]\n", b, b)
 	fmt.Printf("var c float64 \t %T [%v]\n", c, c)
 	fmt.Printf("var d bool \t %T [%v]\n", d, d)
+	/*
+		输出打印如下：
+		var a int 	 int [0]
+		var b string 	 string []
+		var c float64 	 float64 [0]
+		var d bool 	 bool [false]
 
+		备注：
+		%T  表示值的类型。
+		%v  值的默认格式表示。
+		\t  跳格（移至下一列）。
+		\n  软回车。
+	*/
+
+	// Using the short variable declaration operator, we can define and initialize at the same time.
+	// 使用短变量声明运算符，我们可以同时定义和初始化。
+
+	aa := 10
+	bb := "hello"
+	cc := 3.14159
+	dd := true
+
+	fmt.Printf("aa := 10 \t %T [%v]\n", aa, aa)
+	fmt.Printf("bb := \"hello\" \t %T [%v]\n", bb, bb)
+	fmt.Printf("cc := 3.14159 \t %T [%v]\n", cc, cc)
+	fmt.Printf("dd := true \t %T [%v]\n", dd, dd)
+
+	// ---------------------
+	// Conversion vs casting
+	// ---------------------
+
+	// Go doesn't have casting, but conversion.
+	// Instead of telling a compiler to pretend to have some more bytes, we have to allocate more
+	// 不必告诉编译器假装有更多的字节，我们必须分配更多的内存。
+	// memory.
+
+	// Specify type and perform a conversion.
+	// 指定类型并进行转换
+
+	aaa := int32(10)
+
+	fmt.Printf("aaa := int32(10) \t %T [%v]\n", aaa, aaa)
 }
